@@ -39,7 +39,7 @@ defmodule Moon.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Moon.Application, []},
+      mod: {[]},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
