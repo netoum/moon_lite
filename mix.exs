@@ -48,12 +48,15 @@ defmodule Moon.MixProject do
       files: [
         "lib/{moon,moon.ex}",
         "assets",
-        "mix.exs"
+        "mix.exs",
+        "README.md",
+        "CHANGELOG.md",
+        "VERSION"
       ],
       links: %{
         "GitHub" => "https://github.com/netoum/moon/tree/v#{@version}"
       },
-      description: "Components-based design system written in elixir (Lite)"
+      description: "Fork of Moon Design System https://github.com/coingaming/moon"
     ]
   end
 
