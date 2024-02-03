@@ -34,29 +34,13 @@ defmodule Moon.MixProject do
     ]
   end
 
-  # Configuration for the OTP application.
-  #
-  # Type `mix help compile.app` for more information.
-  def application do
-    [
-      mod: {[]},
-      extra_applications: [:logger, :runtime_tools]
-    ]
-  end
-
   defp package do
     [
       licenses: ["MIT"],
       files: [
         "lib/{moon,moon.ex}",
-        "config/surface.exs",
         "assets",
-        "priv/static/{themes,fonts}",
-        "priv/templates",
-        "mix.exs",
-        "README.md",
-        "CHANGELOG.md",
-        "VERSION"
+        "mix.exs"
       ],
       links: %{
         "GitHub" => "https://github.com/coingaming/moon/tree/v#{@version}"
@@ -87,22 +71,12 @@ defmodule Moon.MixProject do
       {:vega_lite, "~> 0.1.0"},
       {:surface, "> 0.9.1"},
       {:timex, "~> 3.6"},
-      {:distillery, "~> 2.1"},
       {:moon_icons, "~> 0.1"},
       {:esbuild, "~> 0.7", runtime: Mix.env() == :dev},
       {:tails, "~> 0.1.7"},
 
-      # test
-      {:excoveralls, "~> 0.10", only: :test},
-      {:floki, ">= 0.27.0", only: :test},
-      {:snapshy, "~> 0.3.0", only: :test},
-
       # dev
-      {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:surface_formatter, "~> 0.7.0", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
-      {:ex_doc, ">= 0.0.0", only: [:dev, :test], runtime: false}
+      {:surface_formatter, "~> 0.7.0", only: [:dev, :test], runtime: false}
     ]
   end
 
