@@ -38,15 +38,17 @@ defmodule Moon.MixProject do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    ((Code.ensure_compiled(MoonWeb.Application) && [{:mod, {MoonWeb.Application, []}}]) || []) ++
-      [extra_applications: [:logger, :runtime_tools]]
+    [
+      mod: {Moon.Application, []},
+      extra_applications: [:logger, :runtime_tools]
+    ]
   end
 
   defp package do
     [
       licenses: ["MIT"],
       files: [
-        "lib",
+        "lib/{moon,moon.ex}",
         "config/surface.exs",
         "assets",
         "priv/static/{themes,fonts}",
